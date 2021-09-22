@@ -1,7 +1,7 @@
 # Statistical Data Analysis
 Link to the [Course webpage](https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=65122&listid=4986&lang=en)
 
-** Learning Objectives ** 
+## Learning Objectives ** 
 * Knowlegde   
     - explain relevant data types and their representation for statistical analysis
     - explain probabilities and random variables
