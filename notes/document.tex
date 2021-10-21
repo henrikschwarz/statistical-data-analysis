@@ -1,0 +1,180 @@
+\documentclass{article}
+
+\author{Henrik Schwarz}
+
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+
+\graphicspath{ {./media/} }
+
+\title{Statistical Data Analysis \\ \small{EKA: T510028102}}
+
+\date{}
+
+\newcommand{\paraheading}[1]{\paragraph{#1} \mbox{}} % create a paragraph and then a mbox so breaking line is possible
+
+\begin{document}
+	\maketitle
+\section*{Learning objectives}
+\begin{itemize}
+	\item Knowlegde
+	\begin{itemize}
+		\item explain relevant data types and their representation for statistical analysis
+		\item explain probabilities and random variables
+		\item explain distributions of random variables
+		\item explain inference and hypothesis testing
+		\item explain how data may be collected from experiments involving randomness 
+	\end{itemize}
+	\item Skills
+	\begin{itemize}
+		\item choose an appropriate experimental design in respect to a given task
+		\item perform statistical analyzes on data collected
+		\item use a statistical tool for analysis and visualization of data 
+	\end{itemize}
+	\item Competence
+	\begin{itemize}
+		\item use statistical methods and tools to interpret experimental data 
+	\end{itemize}
+\end{itemize}
+\newpage
+
+\section{Lecture 1}
+\begin{table}[h]
+\centering
+\caption{Terms in statistics}
+\begin{tabular}{|l|l|} 
+	\hline
+	Term       & Description                                 \\ 
+	\hline
+	Variable   & Characteristic or value that can change     \\ 
+	\hline
+	Data       & The values variables assume                 \\ 
+	\hline
+	Population & The subjects (human or otherwise) we study  \\ 
+	\hline
+	Sample     & Subset of the population                    \\
+	\hline
+\end{tabular}
+\end{table}
+\begin{itemize}
+	\item Descriptive statistics vs Inferential Statistics
+		\begin{itemize}
+			\item Descriptive statistics: Used to describe data
+			\item Inferential statistics: Used to make conclusions about  
+		\end{itemize}
+\end{itemize}
+\paraheading{Measures of central tedency (london)}
+\begin{itemize}
+	\item Mean
+		\begin{itemize}
+			\item Division and sum of all values.
+			\item Calculated $\overline{X} = \frac{X_1+X_2+...+X_n}{n}=\frac{\sum X}{n}$
+			\item Properties of Mean
+			\begin{itemize}
+				\item Uses all data values
+				\item Unique, usually not part of the values
+				\item Affected by extremely low or high values (outliers)
+			\end{itemize}
+		\end{itemize}
+	\item Median
+	\begin{itemize}
+		\item Midpoint of the dataset.
+		\item Calculated by sorting all values in ascending order and then selecting the middle one.
+		\item If the number of values is odd it will be one value, if the number of values is even it will be the average of two.
+		\item Properties of Median:
+		\begin{itemize}
+			\item Affected less than the mean by extremely low or high values.
+		\end{itemize}
+	\end{itemize}
+	\item Mode
+	\begin{itemize}
+		\item The Mode is the value that appears most often in the dataset. 
+		\item Said to be the most typical case. 
+		\item There may be no mode (all unique)m, one mode (unimodal), two modes (bimodal), or many modes (multimodal).
+		\item Calculated by sorting all the values, count instances and then select the one (or multiple) that has the most.
+		\item Properties of the Mode:
+		\begin{itemize}
+			\item Easy to compute
+			\item Can be used with nominal data
+			\item May not exist
+		\end{itemize}
+	\end{itemize}
+	\item Midrange
+	\begin{itemize}
+		\item The midrange is the average of the lowest and highest value in the dataset.
+		\item Calculated by $MR=\frac{Lowest+Highest}{2}$.
+		\item Properties of the Midrange:
+		\begin{itemize}
+			\item Easy to compute
+			\item Affected by \textbf{extremely} by low and high values in a dataset.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\section{Lecture 2}
+\paraheading{Measures of variablity(dispersion)}
+\begin{itemize}
+	\item Range
+	\begin{itemize}
+		\item Difference between highest and lowest values in the dataset.
+		\item $Highest-Lowest$
+	\end{itemize}
+	\item Variance
+	\begin{itemize}
+		\item Together with standard diviation, it is the measure of how spread out your data is.
+		\item Variance is the avarage of the squares of distance of each value is from the mean.
+		\item Population variance: $\sigma^2 = \frac{\sum (X-\mu)^2}{N}$ where $X$ is the value, $\mu$ is the mean and $N$ is the number of values.
+		\item Samlpe variance: $s^2 = \frac{\sum (X - \bar{X})^2}{n-1}$
+	\end{itemize}
+	\item Standard Diviation
+	\begin{itemize}
+		\item Together with standard diviation, it is the measure of how spread out your data is.
+		\item Population Standard deviation is $\sigma = \sqrt{\frac{\sum (X-\mu)^2}{N}}$
+		\item Sample Standard Deviation: $s = \sqrt{\frac{\sum (X - \bar{X})^2}{n-1}}$ where $X$ is the data, $\bar{X}$ is the mean and $n-1$ is the dataset size minus 1.
+	\end{itemize}
+	\item Coefficient of variation
+	\begin{itemize}
+		\item the coefficient of variation is the standard deviation divided by the mean expressed as percentage
+		\item $CV = \frac{s}{\bar{X}}\cdot 100\%$
+	\end{itemize}
+\end{itemize}
+\paraheading{Measure of position}
+Measures of position indicate the position of a value relative to other values in a set of observations
+\begin{itemize}
+	\item Z-score
+	\begin{itemize}
+		\item Z score determines how many standard deviations a value is from the mean
+		\item $z = \frac{x_i - \bar{x}}{s}$ where $x_i$ is the value, $\bar{x}$ is the mean and $s$ is the standard deviation.
+	\end{itemize} 
+	\item Percentile
+	\begin{itemize}
+		\item Percentiles separate the data set into 100 equal groups
+		\item A percentile rank for a datum represents the percentage of data values below the datum
+	\end{itemize}
+	\item Decile and Quartile
+		\begin{itemize}
+			\item Deciles - seperate the data set into 10 equal groups
+			\item Quartiles - seperate the data into 4 equal groups
+			\begin{itemize}
+				\item $Q_1 = p_{25}$, $Q_2=MD$, $Q_3 = P_{75}$
+				\item $Q_2 = median(Low, High)$, $Q_1 = median(Low, Q_2)$, $Q_3 = median(Q_2, High)$ 
+				\item The Interquartile Range $IQR = Q_3 - Q_1$
+			\end{itemize}
+		\end{itemize}
+	\item Outlier
+	\begin{itemize}
+		\item Outlier is an extremely low and high data values when compared to other values
+		\item Following data values can be considered outliers:
+		\begin{itemize}
+			\item less than $Q_1 - 1.5(IQR)$
+			\item greater than $Q_3 + 1.5(IQR)$
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\end{document}
+
+
+
+
+

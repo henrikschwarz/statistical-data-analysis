@@ -1,0 +1,139 @@
+\documentclass{article}
+
+\author{Henrik Schwarz}
+
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+
+\graphicspath{ {./media/} }
+
+\title{Statistical Data Analysis \\ \small{EKA: T510028102}}
+
+\date{}
+
+\newcommand{\paraheading}[1]{\paragraph{#1} \mbox{}} % create a paragraph and then a mbox so breaking line is possible
+\newcommand{\subparaheading}[1]{\subparagraph{#1} \mbox{}}
+
+\begin{document}
+	\maketitle
+	\section*{Learning objectives}
+	\begin{itemize}
+		\item Knowlegde
+		\begin{itemize}
+			\item explain relevant data types and their representation for statistical analysis
+			\item explain probabilities and random variables
+			\item explain distributions of random variables
+			\item explain inference and hypothesis testing
+			\item explain how data may be collected from experiments involving randomness 
+		\end{itemize}
+		\item Skills
+		\begin{itemize}
+			\item choose an appropriate experimental design in respect to a given task
+			\item perform statistical analyzes on data collected
+			\item use a statistical tool for analysis and visualization of data 
+		\end{itemize}
+		\item Competence
+		\begin{itemize}
+			\item use statistical methods and tools to interpret experimental data 
+		\end{itemize}
+	\end{itemize}
+	\newpage
+	\section{Exercises lecture 1}
+	\paraheading{1)}
+	The table below shows the height of students in class A (total of 15 students) and class B (total of 16 students), measured in centimeters. For each of the classroom, calculate the following:
+	\begin{enumerate}
+		\item Median
+		\item Mean
+		\item Mode
+		\item Midrange
+	\end{enumerate}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|l|l|} \hline
+			Class a & Class b \\ \hline
+			156 & 185 \\ \hline
+			175 & 175 \\ \hline
+			189 & 169 \\ \hline
+			165 & 182 \\ \hline
+			160 & 179 \\ \hline
+			154 & 163 \\ \hline
+			158 & 191 \\ \hline
+			170 & 182 \\ \hline
+			171 & 180 \\ \hline
+			169 & 174 \\ \hline
+			180 & 161 \\ \hline
+			175 & 180 \\ \hline
+			172 & 176 \\ \hline
+			169 & 174 \\ \hline
+			162 & 182 \\ \hline
+			& 173 \\ \hline
+		\end{tabular}
+	\end{table}
+	\paraheading{Answer}
+	
+	\subparaheading{Median}
+	To get the median we sort the data in ascending order and then selecting the middle one:
+	\begin{align*}
+		Sort(class_a) = [154, 156, 158, 160, 162, 165, 169, 169, 170, 171, 172, 175, 175, 180, 189]\\
+		\text{Middle value} = 169
+	\end{align*}
+	Since class b has 16 students we get the median by selecting the two middle value and then dividing them by 2:
+	\begin{align*}
+		&Sort(class_b) = [161, 163, 169, 173, 174, 174, 175, 176, 179, 180, 180, 182, 182, 182, 185, 191] \\
+		&\text{Middle values} = [179, 180] \\
+		&Median = \frac{179+180}{2}=179.5
+	\end{align*}
+	
+	\subparaheading{mean} \\
+	To get the mean we first sum all the values and then divide by:
+	
+	\begin{align*}
+		Class_a=[x_1,x_2,..x_{15}] \\
+		\sum Class_a = \sum x_1,...,x_{15} = 2525 \\↓
+		\frac{2525}{15} = 168.33
+	\end{align*}
+	We now do the same for class b:
+	\begin{align*}
+		\sum class_b = 2826 \\
+		\frac{2826}{16} = 176.625
+	\end{align*}
+	
+	\subparaheading{Mode}
+	To calculate the mode we count the instances of data values and pick the most common ( most instances ):
+	\begin{align*}
+		\text{count instances class a} = [(169, 2), (175, 2)]
+	\end{align*}
+	So class a is bimodal.
+	
+	Now we caluclate class b:
+	\begin{align*}
+		\text{count instances class a} = (182,3)
+	\end{align*}
+	
+	\subparaheading{Midrange}
+	To calculate the midrange we add the lowest and the highest value togther and divide by two:
+	\begin{align}
+	Midrange(class_a) = \frac{154+180}{2} = 171.5 \\
+	Midrange(class_b) = \frac{161+191}{2} = 167
+	\end{align}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
